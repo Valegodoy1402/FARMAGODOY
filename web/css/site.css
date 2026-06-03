@@ -1,0 +1,303 @@
+/* ==========================================================================
+   1. PALETA DE COLORES E IDENTIDAD CORPORATIVA
+   ========================================================================== */
+:root {
+    --primary-godoy: #029bf1;
+    --dark-godoy: #0c385a;
+    --light-bg: #f8fbfe;
+    --text-muted: #6c757d;
+    --border-card: #e2e8f0;
+}
+
+.layout-custom-body {
+    background-color: #ffffff;
+}
+
+/* Espaciado del contenedor principal para evitar saltos bruscos */
+main > .container {
+    padding: 120px 15px 40px;
+}
+
+/* ==========================================================================
+   2. NAVBAR COMPLETO & SOLUCIÓN DE TAMAÑO DE LOGO
+   ========================================================================== */
+.custom-navbar {
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.02);
+    background-color: #ffffff !important;
+}
+
+/* Forzamos al elemento Brand de Bootstrap a no limitar la altura */
+.custom-navbar .navbar-brand {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding: 0;
+    margin-right: 1.5rem;
+}
+
+/* TRUCO VISUAL: Escalamos la imagen hacia afuera para compensar el espacio transparente */
+.navbar-logo {
+    height: 150%;
+    width: auto;
+    object-fit: contain;
+    transform: scale(2.3); /* Duplica el tamaño visual del logo interno */
+    transform-origin: left center;
+    margin-left: 10px; 
+}
+
+/* Enlaces superiores */
+.nav-link-custom {
+    color: #4a5568 !important;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem !important;
+    transition: color 0.2s ease;
+}
+
+.nav-link-custom:hover {
+    color: var(--primary-godoy) !important;
+}
+
+/* Buscador en el Navbar */
+.search-container-navbar {
+    align-items: center;
+}
+
+.custom-search-input {
+    background-color: #f1f5f9;
+    border: none;
+    border-radius: 8px;
+    padding: 9px 16px 9px 38px;
+    font-size: 0.9rem;
+    color: #334155;
+}
+
+.custom-search-input:focus {
+    background-color: #ffffff;
+    box-shadow: 0 0 0 2px rgba(2, 155, 241, 0.2);
+    outline: none;
+}
+
+.search-icon-inside {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    pointer-events: none;
+}
+
+/* Botón Login */
+.btn-login-navbar {
+    background-color: #0c385a;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.btn-login-navbar:hover {
+    background-color: var(--primary-godoy);
+    color: #ffffff !important;
+}
+
+/* Responsivo para móviles */
+@media (max-width: 767.98px) {
+    .navbar-logo {
+        transform: scale(1.8); /* Ajuste menor en móviles */
+    }
+    main > .container {
+        padding-top: 170px;
+    }
+}
+
+/* ==========================================================================
+   3. HERO SECTION (INICIO)
+   ========================================================================== */
+.custom-badge {
+    background-color: #d1f0ff;
+    color: var(--primary-godoy);
+    font-weight: 600;
+    font-size: 0.75rem;
+    padding: 6px 12px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+}
+
+.main-title {
+    color: var(--dark-godoy);
+    font-size: 2.8rem;
+    line-height: 1.2;
+}
+
+.text-primary-custom {
+    color: var(--primary-godoy) !important;
+}
+
+.subtitle-text {
+    font-size: 1.05rem;
+    color: #556270;
+}
+
+.btn-primary-custom {
+    background-color: var(--primary-godoy);
+    border-color: var(--primary-godoy);
+    color: #ffffff;
+    font-weight: 500;
+    padding: 12px 24px;
+    border-radius: 6px;
+}
+
+.btn-primary-custom:hover {
+    background-color: #0286d1;
+    color: #ffffff;
+}
+
+.btn-outline-custom {
+    border-color: #b9cde3;
+    color: var(--dark-godoy);
+    font-weight: 500;
+    padding: 12px 24px;
+    border-radius: 6px;
+}
+
+.btn-outline-custom:hover {
+    background-color: var(--light-bg);
+    border-color: var(--primary-godoy);
+    color: var(--primary-godoy);
+}
+
+.hero-image-container {
+    background: linear-gradient(135deg, #ffffff 0%, #edf7fd 100%);
+    border-radius: 16px;
+    padding: 60px 40px;
+    box-shadow: 0 20px 40px rgba(2, 155, 241, 0.06);
+    border: 1px solid rgba(2, 155, 241, 0.1);
+}
+
+/* ==========================================================================
+   4. TARJETAS DE ESPECIALIDADES
+   ========================================================================== */
+.line-separator {
+    border-top: 1px solid #eef2f6;
+    opacity: 1;
+}
+
+.section-title {
+    color: var(--dark-godoy);
+    font-weight: 700;
+    font-size: 1.85rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background-color: var(--primary-godoy);
+}
+
+.specialty-card {
+    border: 1px solid var(--border-card);
+    border-radius: 12px;
+    background-color: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.specialty-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(12, 56, 90, 0.05);
+}
+
+.icon-wrapper {
+    width: 54px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.bg-light-blue {
+    background-color: #eff8ff;
+    color: var(--primary-godoy);
+}
+
+.specialty-card .card-title {
+    color: var(--dark-godoy);
+    font-size: 1.25rem;
+}
+
+.btn-card-action {
+    border: 1px solid #cbd5e1;
+    color: var(--dark-godoy);
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    border-radius: 6px;
+    background-color: #ffffff;
+    width: 100%;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-card-action:hover {
+    border-color: var(--primary-godoy);
+    color: var(--primary-godoy);
+    background-color: var(--light-bg);
+}
+
+.feature-icon {
+    font-size: 1.5rem;
+}
+
+.feature-item h6 {
+    color: var(--dark-godoy);
+    font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   5. FOOTER & YII RESIDUALS
+   ========================================================================== */
+.custom-footer {
+    background-color: #f8fafc;
+}
+
+.footer-heading {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    color: #1e293b;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: #64748b;
+    text-decoration: none;
+    font-size: 0.88rem;
+}
+
+.footer-links a:hover {
+    color: var(--primary-godoy);
+}
+
+.not-set {
+    color: #c55;
+    font-style: italic;
+}
+
+.grid-view th {
+    white-space: nowrap;
+}
+
+.error-summary {
+    color: #a94442;
+    background: #fdf7f7;
+    border-left: 3px solid #eed3d7;
+    padding: 10px 20px;
+    margin: 0 0 15px 0;
+}
